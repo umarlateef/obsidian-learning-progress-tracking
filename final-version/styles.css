@@ -1,0 +1,280 @@
+/* Main styles for the Learning Progress Plugin */
+
+/* Progress bar styles */
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: var(--background-secondary);
+  border-radius: 5px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-low {
+  background-color: var(--text-error);
+}
+
+.progress-medium {
+  background-color: var(--text-warning);
+}
+
+.progress-high {
+  background-color: var(--text-success);
+}
+
+/* Topic and subtopic list styles */
+.topic-list {
+  margin-top: 10px;
+}
+
+.topic-item {
+  background-color: var(--background-secondary);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.topic-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.topic-progress-text {
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.subtopics-container {
+  margin-top: 10px;
+}
+
+.subtopics-toggle {
+  cursor: pointer;
+  color: var(--text-accent);
+  font-size: 0.9em;
+}
+
+.subtopics-toggle:hover {
+  text-decoration: underline;
+}
+
+.subtopics-list {
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+.subtopics-list.hidden {
+  display: none;
+}
+
+.subtopic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.subtopic-name {
+  display: flex;
+  align-items: center;
+}
+
+.subtopic-status {
+  margin-right: 5px;
+}
+
+.subtopic-missing {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.subtopic-toggle-button {
+  font-size: 0.8em;
+  padding: 2px 5px;
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.subtopic-toggle-button:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* Knowledge Map styles */
+.knowledge-map-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.knowledge-map-svg {
+  min-height: 300px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.topic-node {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topic-node:hover {
+  transform: scale(1.05);
+}
+
+.topic-node-name {
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.topic-node-progress {
+  font-size: 0.7em;
+}
+
+.node-not-started {
+  background-color: var(--background-secondary);
+}
+
+.node-low-progress {
+  background-color: var(--text-error);
+}
+
+.node-medium-progress {
+  background-color: var(--text-warning);
+}
+
+.node-high-progress {
+  background-color: var(--text-success);
+}
+
+.node-completed {
+  background-color: var(--interactive-success);
+}
+
+.knowledge-map-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--background-secondary);
+  border-radius: 5px;
+}
+
+.legend-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.legend-completed {
+  background-color: var(--interactive-success);
+}
+
+.legend-high-progress {
+  background-color: var(--text-success);
+}
+
+.legend-medium-progress {
+  background-color: var(--text-warning);
+}
+
+.legend-low-progress {
+  background-color: var(--text-error);
+}
+
+.legend-not-started {
+  background-color: var(--background-secondary);
+}
+
+.legend-label {
+  font-size: 0.8em;
+}
+
+.knowledge-map-instructions {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Navigation buttons */
+.nav-buttons-container {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.nav-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.nav-button-active {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+/* Messages */
+.no-topics-message {
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Settings */
+.template-setting textarea {
+  min-height: 150px;
+  font-family: monospace;
+}
+
+/* Progress code block */
+code.language-progress {
+  display: block;
+  padding: 5px;
+  font-family: monospace;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 3px;
+}

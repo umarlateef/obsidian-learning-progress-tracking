@@ -158,9 +158,10 @@ export default class LearningProgressPlugin extends Plugin {
 		
 		if (!leaf) {
 			// Create new leaf in the right sidebar
-			leaf = workspace.getRightLeaf(false);
-			if (leaf) {
-				await leaf.setViewState({ type: viewType });
+			const rightLeaf = workspace.getRightLeaf(false);
+			if (rightLeaf) {
+				await rightLeaf.setViewState({ type: viewType });
+				leaf = rightLeaf;
 			}
 		}
 		
@@ -254,7 +255,9 @@ export default class LearningProgressPlugin extends Plugin {
 							if (!subtopicsArray.includes(`"${subtopicLink}"`)) {
 								subtopicsArray.push(`"${subtopicLink}"`);
 							}
-							frontmatter = frontmatter.replace(arrayRegex, `subtopics: [${subtopicsArray.join(', ')}]`);
+							const nestedList = subtopicsArray.map(subtopic => `  - ${subtopic}`).join('\n');
+    						frontmatter = frontmatter.replace(arrayRegex, `subtopics:\n${nestedList}`);
+							//frontmatter = frontmatter.replace(arrayRegex, `subtopics: [${subtopicsArray.join(', ')}]`);
 						}
 					} else {
 						// List format
